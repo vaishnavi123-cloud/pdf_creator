@@ -66,6 +66,29 @@ The app starts in debug mode and is usually available at:
 
 - http://127.0.0.1:5000/
 
+## Deploy on Render (Recommended)
+
+This repo now includes:
+
+- `requirements.txt`
+- `render.yaml`
+
+### Steps
+
+1. Push your latest code to GitHub (including `requirements.txt` and `render.yaml`).
+2. Go to Render dashboard: https://dashboard.render.com/
+3. Click **New +** -> **Blueprint**.
+4. Connect your GitHub account and select this repository.
+5. Render detects `render.yaml` automatically. Click **Apply**.
+6. Wait for build and deploy to finish.
+7. Open your generated Render URL.
+
+### Important for Your Current Storage
+
+Your app currently writes data to `data_store.json` on local disk. On Render free instances, local filesystem data is not permanent across restarts/redeploys.
+
+If you need persistent data in production, move storage to a database (for example, PostgreSQL or SQLite on a persistent disk).
+
 ## How to Use
 
 1. Open the home page.
